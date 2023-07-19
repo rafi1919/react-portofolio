@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./components/img/dark2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 code {
@@ -16,20 +20,21 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto';
 }
 
 #header{
-  height: 100vh;
+  height: 90vh;
+  /* padding: 50px; */
   text-align: center;
   justify-content: center;
 }
 
 #header img{
   object-fit: cover;
-  width: 15.625rem;
-  height:15.625rem;
+  width: 3.125rem;
+  height:3.125rem;
   border-radius: 50%;
-
 
   transform: scale(1);
   transition: 0.2s linear;
@@ -37,33 +42,32 @@ code {
 
 #header img:hover{
   transform: scale(1.1);
-  box-shadow: rgba(244, 67, 54, 0.35) 0px 5px 15px;
+  box-shadow: rgba(24, 231, 86, 0.35) 0px 5px 15px;
 }
 
+.icon{
+  width: 10px;
+}
 a{
   text-decoration: none;
 }
-#header .boxname{
-  display: block;
-  margin-top: 8%;
-}
 
+.navbar{
+  margin: auto;
+  margin-top: 80px;
+}
 #header .myname{
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 #about{
-  height: 80vh;
+  height: 90vh;
   text-align: center;
-}
-#about .resume{
-  margin-top: 7%;
-  text-align: left;
+  /* background: white;
+  filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
-#about .text{
-  font-size: 1rem;
-}
 
 #about img{
   object-fit: cover;
@@ -71,8 +75,9 @@ a{
 }
 
 #porto{
-  height: 80vh;
+  height: 90vh;
   text-align: center;
+  background: white;
 }
 
 #porto .portopng img{
@@ -85,22 +90,69 @@ a{
 
 #porto .portopng img:hover{
   filter: grayscale(0) brightness(1);
-  box-shadow: rgba(244, 67, 54, 0.35) 0px 5px 15px;
+  box-shadow: rgba(24, 231, 86, 0.35) 0px 5px 15px;
+}
+
+/* running text animation */
+
+#scroll-container {
+  /* border: 3px solid black;
+  border-radius: 5px; */
+  overflow: hidden;
+}
+
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes spin {
+ 
+  0% {
+    content: "Frontend Developer";
+  }
+  100% {
+    content: "Content Creator";
+  }  
 }
 
 @media (max-width:600px){
 
-  #header{
-    height: auto;
+  body{
+    background-image: url("./components/img/dark.jpg");
   }
-  #header img{
-    width: 14.625rem;
-    height:14.625rem;
+  #header{
+    padding: 0;
+    height: 70vh;
   }
   
   #about{
-    display: flex;
-    height: auto;
+    height: 70vh ;
   }
   #about .resume{
     margin-top: none;
@@ -128,10 +180,6 @@ a{
 
   #header{
     height: auto;
-  }
-  
-  #about{
-    display: flex;
   }
 
   #about Grid{
